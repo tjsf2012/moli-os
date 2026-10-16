@@ -1,0 +1,11 @@
+# Moli OS sur un NAS Synology ARM64 (DS223j...) : l'image est construite par
+# le workflow image-arm64 et seulement téléchargée ici.
+services:
+  moli-os:
+    image: ghcr.io/tjsf2012/moli-os:latest
+    container_name: moli-os
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./data:/data
+    mem_limit: 128m
